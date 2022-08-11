@@ -27,8 +27,7 @@ public class Empleado {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.trabajo = trabajo;
-		this.sueldo = sueldo;
-		
+		this.sueldo = sueldo;	
 	}
 
 	public Long getId() {
