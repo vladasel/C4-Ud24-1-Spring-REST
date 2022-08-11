@@ -28,6 +28,7 @@ public class Empleado {
 		this.apellido = apellido;
 		this.trabajo = trabajo;
 		this.sueldo = sueldo;
+		
 	}
 
 	public Long getId() {
