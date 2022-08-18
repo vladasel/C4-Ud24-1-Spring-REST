@@ -1,5 +1,9 @@
 package com.ionela.rest.dto;
 
 public enum Trabajo {
-	electricista, fontanero, carpintero, peon
+	electricista, fontanero, carpintero, peon;
+
+	
+	
+	
 }

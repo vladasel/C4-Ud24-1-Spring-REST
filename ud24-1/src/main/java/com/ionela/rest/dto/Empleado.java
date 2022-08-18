@@ -14,20 +14,63 @@ public class Empleado {
 	private Long id;
 	private String nombre;
 	private String apellido;
-	private Trabajo trabajo;
+	private String trabajo;
 	private Double sueldo;
 
 	public Empleado() {
 
 	}
 
-	public Empleado(Long id, String nombre, String apellido, Trabajo trabajo, Double sueldo) {
+	public Empleado(Long id, String nombre, String apellido, String trabajo, Double sueldo) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.trabajo = trabajo;
-		this.sueldo = sueldo;	
+		this.sueldo = getSalario(trabajo);
+	}
+
+	public Empleado(String nombre, String apellido, String trabajo) {
+
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.trabajo = trabajo;
+		this.sueldo = getSalario(trabajo);
+
+	}
+
+	public Empleado(String trabajo) {
+
+		this.trabajo = trabajo;
+		this.sueldo = getSalario(trabajo);
+
+	}
+
+
+	public Double getSalario(String trabajo) {
+		double salario = 0;
+		// electricista, fontanero, carpintero, peon;
+		switch (trabajo) {
+		case "electricista":
+			salario = 2500.0;
+			break;
+		case "fontanero":
+			salario = 2000.0;
+			break;
+		case "carpintero":
+			salario = 4000.0;
+			break;
+		case "peon":
+			salario = 1500.0;
+			break;
+
+		default:
+			salario = 1500.0;
+			break;
+		}
+
+		return salario;
+
 	}
 
 	public Long getId() {
@@ -54,11 +97,11 @@ public class Empleado {
 		this.apellido = apellido;
 	}
 
-	public Trabajo getTrabajo() {
+	public String getTrabajo() {
 		return trabajo;
 	}
 
-	public void setTrabajo(Trabajo trabajo) {
+	public void setTrabajo(String trabajo) {
 		this.trabajo = trabajo;
 	}
 
